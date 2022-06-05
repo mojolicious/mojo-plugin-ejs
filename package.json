@@ -1,0 +1,43 @@
+{
+  "name": "mojo-plugin-ejs",
+  "version": "0.0.1",
+  "description": "Adds ejs template support to mojo.js",
+  "keywords": [
+    "mojojs",
+    "ejs",
+    "html"
+  ],
+  "dependencies": {
+    "@mojojs/core": "^0.33.2",
+    "@mojojs/path": "^1.4.2",
+    "ejs": "^3.1.8",
+    "lru-cache": "^7.10.1"
+  },
+  "type": "module",
+  "author": "Sebastian Riedel <s@kraih.com>",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "tap": "^16.2.0"
+  },
+  "exports": "./lib/ejs.js",
+  "files": [
+    "lib/"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mojolicious/mojo-plugin-ejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mojolicious/mojo-plugin-ejs/issues"
+  },
+  "scripts": {
+    "lint": "eslint \"test/*.js\" \"lib/*.js\"",
+    "test": "tap --no-coverage test/*.js"
+  }
+}
