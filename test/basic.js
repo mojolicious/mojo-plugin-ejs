@@ -6,6 +6,7 @@ import t from 'tap';
 t.test('ejsPlugin', async t => {
   const app = mojo({mode: 'testing'});
   app.plugin(ejsPlugin);
+  app.plugin(ejsPlugin, {name: 'foo'});
 
   app.renderer.viewPaths.push(Path.currentFile().sibling('support', 'views').toString());
 
@@ -25,6 +26,14 @@ t.test('ejsPlugin', async t => {
     await ctx.render({inline: '<%- greeting %> World!', engine: 'ejs'}, {greeting: 'Hello'});
   });
 
+  app.get('/inline/foo', async ctx => {
+    await ctx.render({inline: '<%- greeting %> World!', engine: 'foo'}, {greeting: 'Hello'});
+  });
+
+  app.get('/inline/mt', async ctx => {
+    await ctx.render({inline: '<%== greeting %> World!'}, {greeting: 'Hello'});
+  });
+
   app.get('/async', async ctx => {
     await ctx.render({view: 'async'}, {test: async () => 'Async works too'});
   });
@@ -42,6 +51,8 @@ t.test('ejsPlugin', async t => {
 
   await t.test('Inline template', async () => {
     (await ua.getOk('/inline')).statusIs(200).bodyLike(/Hello World/);
+    (await ua.getOk('/inline/foo')).statusIs(200).bodyLike(/Hello World/);
+    (await ua.getOk('/inline/mt')).statusIs(200).bodyLike(/Hello World/);
   });
 
   await t.test('Async', async () => {

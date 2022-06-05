@@ -33,7 +33,13 @@ app.get('/inline', async ctx => {
 app.start();
 ```
 
-To change the default engine for inline templates you can also set `app.renderer.defaultEngine` to `ejs`.
+To change the default engine for inline templates you can also set `app.renderer.defaultEngine` to `ejs`. Or you can
+register the template engine with a completely different name.
+
+```js
+app.plugin(ejsPlugin, {name: 'foo'});
+app.renderer.defaultEngine = 'foo';
+```
 
 ## Installation
 
