@@ -33,6 +33,8 @@ app.get('/inline', async ctx => {
 app.start();
 ```
 
+To change the default engine for inline templates you can also set `app.renderer.defaultEngine` to `ejs`.
+
 ## Installation
 
 All you need is Node.js 16.0.0 (or newer).
