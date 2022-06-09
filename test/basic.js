@@ -30,7 +30,7 @@ t.test('ejsPlugin', async t => {
     await ctx.render({inline: '<%- greeting %> World!', engine: 'foo'}, {greeting: 'Hello'});
   });
 
-  app.get('/inline/mt', async ctx => {
+  app.get('/inline/tmpl', async ctx => {
     await ctx.render({inline: '<%== greeting %> World!'}, {greeting: 'Hello'});
   });
 
@@ -52,7 +52,7 @@ t.test('ejsPlugin', async t => {
   await t.test('Inline template', async () => {
     (await ua.getOk('/inline')).statusIs(200).bodyLike(/Hello World/);
     (await ua.getOk('/inline/foo')).statusIs(200).bodyLike(/Hello World/);
-    (await ua.getOk('/inline/mt')).statusIs(200).bodyLike(/Hello World/);
+    (await ua.getOk('/inline/tmpl')).statusIs(200).bodyLike(/Hello World/);
   });
 
   await t.test('Async', async () => {
