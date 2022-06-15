@@ -16,6 +16,7 @@
   "type": "module",
   "author": "Sebastian Riedel <s@kraih.com>",
   "devDependencies": {
+    "c8": "^7.11.3",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -37,6 +38,7 @@
     "url": "https://github.com/mojolicious/mojo-plugin-ejs/issues"
   },
   "scripts": {
+    "coverage": "c8 tap --no-coverage test/*.js",
     "lint": "eslint \"test/*.js\" \"lib/*.js\"",
     "publish:major": "npm version major && npm publish",
     "publish:minor": "npm version minor && npm publish",
