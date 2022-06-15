@@ -1,6 +1,6 @@
 {
   "name": "mojo-plugin-ejs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Adds ejs template support to mojo.js",
   "keywords": [
     "mojojs",
