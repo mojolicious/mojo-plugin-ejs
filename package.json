@@ -37,8 +37,10 @@
   "bugs": {
     "url": "https://github.com/mojolicious/mojo-plugin-ejs/issues"
   },
+  "homepage": "https://mojojs.org",
   "scripts": {
     "coverage": "c8 tap --no-coverage test/*.js",
+    "coverage:ci": "c8 --reporter lcovonly tap --no-coverage test/*.js",
     "lint": "eslint \"test/*.js\" \"lib/*.js\"",
     "publish:minor": "npm version minor && npm publish",
     "publish:patch": "npm version patch && npm publish",
