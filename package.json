@@ -8,7 +8,7 @@
     "html"
   ],
   "dependencies": {
-    "@mojojs/core": "^0.33.2",
+    "@mojojs/core": "^1.14.1",
     "@mojojs/path": "^1.4.2",
     "ejs": "^3.1.8",
     "lru-cache": "^7.10.1"
