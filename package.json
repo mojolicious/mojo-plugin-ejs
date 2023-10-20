@@ -40,7 +40,7 @@
   "homepage": "https://mojojs.org",
   "scripts": {
     "coverage": "c8 tap --disable-coverage --allow-empty-coverage test/*.js",
-    "coverage:ci": "c8 --reporter lcovonly tap --no-coverage test/*.js",
+    "coverage:ci": "c8 --reporter lcovonly tap --disable-coverage --allow-empty-coverage test/*.js",
     "lint": "eslint \"test/*.js\" \"lib/*.js\"",
     "publish:minor": "npm version minor && npm publish",
     "publish:patch": "npm version patch && npm publish",
